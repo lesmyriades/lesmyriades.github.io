@@ -1,5 +1,7 @@
 html, body {
     height: 100%;
+    margin: 0;
+    padding: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #ffffff;
     color: #000000;
@@ -45,11 +47,11 @@ nav ul li a:hover {
 main {
     flex: 1;
     text-align: left;
-     
+    margin: 1em;  /* Ajout de la marge de 1em */
 }
 
 .full-screen-image {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
     position: relative;
@@ -64,6 +66,7 @@ main {
     cursor: grab;
     margin: 0;  /* Retirer les marges */
     padding: 0;  /* Retirer les marges */
+    display: block;  /* Assurer qu'il n'y a pas d'espaces blancs en dessous */
 }
 
 /* Alignement du texte à gauche pour la section avec l'ID "home" */
@@ -92,7 +95,6 @@ footer {
     font-size: 18px;
     color: #000000;
 }
-
 
 .control-button {
     margin: 10px;
