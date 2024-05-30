@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const randomTextContainer = document.getElementById('randomTextContainer');
 
     function generateRandomText() {
-        const words = ["Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "Integer", "nec", "odio", "Praesent", "libero", "Sed", "cursus", "ante", "dapibus", "diam", "Sed", "nisi"];
+        const words = ["root", "roots"];
         const randomWord = words[Math.floor(Math.random() * words.length)];
         return randomWord;
     }
