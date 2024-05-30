@@ -86,14 +86,14 @@ footer {
     object-position: center;
     cursor: grab;
 
-    .zoom-container {
+    .zoomable-image {
     width: 100%;
     height: 100vh;
     overflow: hidden;
     position: relative;
 }
 
-.zoom-container img {
+.zoomable-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
