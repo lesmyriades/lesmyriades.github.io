@@ -108,9 +108,11 @@ section p {
 }
 
 #home h2 {
+    text-align: left;
     margin-bottom: 10px;
 }
 
 #home p {
+    text-align: left;
     margin-bottom: 10px;
 }
