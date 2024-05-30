@@ -1,7 +1,7 @@
 const randomTextContainer = document.getElementById('randomTextContainer');
 
 function generateRandomText() {
-    const words = ["Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "Integer", "nec", "odio", "Praesent", "libero", "Sed", "cursus", "ante", "dapibus", "diam", "Sed", "nisi"];
+    const words = ["root", "root", "roots", "rooted", "uprooted", "unrooted", "rooting", "radix", "radices", "wurtz", "racine", "raciner", "enraciner"];
     const randomWord = words[Math.floor(Math.random() * words.length)];
     return randomWord;
 }
