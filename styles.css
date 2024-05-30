@@ -15,18 +15,24 @@ body {
 header {
     background-color: #000000;
     color: #ffffff;
-    padding: 10px 0;
+    padding: 20px;
     text-align: left;
+    font-size: 1.5em;
+    border-bottom: 2px solid #4CAF50;
 }
 
 nav {
     margin: 20px;
+    background: #4CAF50;
+    padding: 10px;
+    border-radius: 8px;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
     text-align: left;
+    margin: 0;
 }
 
 nav ul li {
@@ -36,18 +42,28 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #000000; /* Couleur des liens en noir */
+    color: #ffffff; /* Couleur des liens en blanc */
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #808080; /* Change to grey on hover */
+    color: #000000; /* Change to black on hover */
 }
 
 main {
     flex: 1;
     text-align: left;
-    margin: 10px;  /* Ajout de la marge de ? */
+    margin: 1em;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+}
+
+main:hover {
+    background: #f1f1f1;
 }
 
 .full-screen-image {
@@ -57,6 +73,11 @@ main {
     position: relative;
     margin: 0;  /* Retirer les marges */
     padding: 0;  /* Retirer les marges */
+    transition: transform 0.5s ease-in-out;
+}
+
+.full-screen-image:hover {
+    transform: scale(1.02);
 }
 
 .full-screen-image img {
@@ -67,6 +88,7 @@ main {
     margin: 0;  /* Retirer les marges */
     padding: 0;  /* Retirer les marges */
     display: block;  /* Assurer qu'il n'y a pas d'espaces blancs en dessous */
+    border-radius: 8px;
 }
 
 /* Alignement du texte à gauche pour la section avec l'ID "home" */
@@ -77,23 +99,43 @@ main {
 
 #home h2 {
     margin-bottom: 10px;
+    color: #4CAF50;
+    position: relative;
+    font-size: 1.8em;
+}
+
+#home h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 50px;
+    height: 3px;
+    background: #4CAF50;
 }
 
 #home p {
     margin-bottom: 10px;
+    line-height: 1.6;
 }
 
 footer {
     background-color: #000000;
     color: #ffffff;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px;
+    font-size: 0.9em;
+    border-top: 2px solid #4CAF50;
 }
 
 #randomTextContainer {
     margin-top: 20px;
     font-size: 18px;
     color: #000000;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
 }
 
 .control-button {
@@ -105,7 +147,7 @@ footer {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, transform 0.2s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
@@ -116,7 +158,7 @@ footer {
 }
 
 .control-button:active {
-    transform: scale(0.98);
+    transform: scale(0.95);
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
