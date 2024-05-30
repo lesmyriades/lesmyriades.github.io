@@ -206,3 +206,44 @@ footer {
     outline: none;
     box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
 }
+
+.stylish-link {
+    text-decoration: none;
+    color: #3CB371;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.stylish-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #3CB371;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.stylish-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.stylish-link:hover {
+    color: #000000;
+    transform: translateY(-2px);
+}
+
+.stylish-link:active {
+    color: #3CB371;
+    transform: translateY(2px);
+}
+
+.stylish-link:visited {
+    color: #3CB371;
+}
