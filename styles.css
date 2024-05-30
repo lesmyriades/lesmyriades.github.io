@@ -88,3 +88,9 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+
+#randomTextContainer {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #000000;
+}
