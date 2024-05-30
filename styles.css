@@ -267,7 +267,7 @@ footer {
 }
 
 #tree {
-    list-style-type: none;
+    list-style-type: none; /* Supprime les puces */
     position: relative;
     padding: 20px 0;
     margin: 0;
@@ -321,6 +321,12 @@ footer {
     padding-top: 0;
 }
 
+.tree-node ul {
+    list-style-type: none; /* Supprime les puces pour les sous-listes */
+    padding: 0;
+    margin: 0;
+}
+
 .tree-node .label {
     display: inline-block;
     padding: 8px 12px;
@@ -334,4 +340,8 @@ footer {
 .tree-node .label:hover {
     background: #2E8B57;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.tree-node ul {
+    padding-left: 0; /* Supprime le padding pour les sous-listes */
 }
