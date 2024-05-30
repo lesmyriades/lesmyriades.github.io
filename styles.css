@@ -18,12 +18,12 @@ header {
     padding: 20px;
     text-align: left;
     font-size: 1.5em;
-    border-bottom: 2px solid #4CAF50;
+    border-bottom: 2px solid #3CB371;
 }
 
 nav {
     margin: 20px;
-    background: #4CAF50;
+    background: #3CB371;
     padding: 10px;
     border-radius: 8px;
 }
@@ -99,7 +99,7 @@ main:hover {
 
 #home h2 {
     margin-bottom: 10px;
-    color: #4CAF50;
+    color: #3CB371;
     position: relative;
     font-size: 1.8em;
 }
@@ -111,7 +111,7 @@ main:hover {
     bottom: -5px;
     width: 50px;
     height: 3px;
-    background: #4CAF50;
+    background: #3CB371;
 }
 
 #home p {
@@ -125,7 +125,7 @@ footer {
     text-align: center;
     padding: 20px;
     font-size: 0.9em;
-    border-top: 2px solid #4CAF50;
+    border-top: 2px solid #3CB371;
 }
 
 #randomTextContainer {
