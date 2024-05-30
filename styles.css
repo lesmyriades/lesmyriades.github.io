@@ -44,6 +44,19 @@ main {
     text-align: center;
 }
 
+p {
+    color: #000000;
+}
+
+p a {
+    color: #000000;
+    text-decoration: none;
+}
+
+p a:hover {
+    color: #808080; /* Change to grey on hover */
+}
+
 footer {
     background-color: #000000;
     color: #ffffff;
