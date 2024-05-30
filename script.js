@@ -1,15 +1,3 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Script pour zoomer et déplacer l'image en plein écran
-    const images = document.querySelectorAll('.full-screen-image img');
-    images.forEach((imageElement) => {
-        const panzoom = Panzoom(imageElement, {
-            maxScale: 10,
-            minScale: 1,
-            contain: 'outside',
-            step: 0.1,
-        });
-        imageElement.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
-    });
 
     // Script pour ajouter du texte aléatoire à intervalles réguliers
     const randomTextContainer = document.getElementById('randomTextContainer');
