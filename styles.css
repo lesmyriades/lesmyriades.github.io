@@ -95,9 +95,10 @@ footer {
     color: #000000;
 }
 
+
 .control-button {
     margin: 10px;
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #000;
     color: #fff;
     border: 2px solid #000;
@@ -105,9 +106,21 @@ footer {
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .control-button:hover {
     background-color: #fff;
     color: #000;
+    box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+}
+
+.control-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.control-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
 }
