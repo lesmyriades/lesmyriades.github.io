@@ -100,3 +100,17 @@ section h2 {
 section p {
     margin-bottom: 10px;
 }
+
+/* Alignement du texte à gauche pour la section avec l'ID "home" */
+#home {
+    text-align: left;
+    padding: 20px;
+}
+
+#home h2 {
+    margin-bottom: 10px;
+}
+
+#home p {
+    margin-bottom: 10px;
+}
