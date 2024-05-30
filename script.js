@@ -31,3 +31,30 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.error("Element #background-audio not found.");
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const predicates = [
+        "Nos racines sont profondes mais elles ne sont pas irremplaçables",
+        "Notre histoire peut prendre des tournants différents et s'enraciner dans des milieux divers",
+        "Nos déracinements font notre histoire"
+    ];
+
+    function generateStory() {
+        const shuffledPredicates = predicates.sort(() => 0.5 - Math.random());
+        return shuffledPredicates.join('. ') + '.';
+    }
+
+    const storyParagraph = document.getElementById('generated-story');
+    const generateButton = document.getElementById('generate-button');
+
+    function displayNewStory() {
+        const newStory = generateStory();
+        storyParagraph.textContent = newStory;
+    }
+
+    // Generate and display the first story on page load
+    displayNewStory();
+
+    // Generate and display a new story on button click
+    generateButton.addEventListener('click', displayNewStory);
+});
