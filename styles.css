@@ -80,6 +80,8 @@ footer {
     height: 100vh;
     overflow: hidden;
     position: relative;
+    margin: 0;  /* Retirer les marges */
+    padding: 0;  /* Retirer les marges */
 }
 
 .full-screen-image img {
@@ -87,20 +89,8 @@ footer {
     height: 100%;
     object-fit: cover;
     cursor: grab;
-}
-
-    .zoomable-image {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-}
-
-.zoomable-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: grab;
+    margin: 0;  /* Retirer les marges */
+    padding: 0;  /* Retirer les marges */
 }
 
 /* Alignement du texte à gauche */
