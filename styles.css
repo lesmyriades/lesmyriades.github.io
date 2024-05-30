@@ -2,7 +2,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', 'Poppins', sans-serif;
     background-color: #ffffff;
     color: #000000;
 }
@@ -19,6 +19,7 @@ header {
     text-align: left;
     font-size: 1.5em;
     border-bottom: 2px solid #3CB371;
+    font-family: 'Poppins', sans-serif;
 }
 
 nav {
@@ -60,6 +61,7 @@ main {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background 0.3s;
+    font-family: 'Montserrat', sans-serif;
 }
 
 main:hover {
@@ -102,6 +104,7 @@ main:hover {
     color: #3CB371;
     position: relative;
     font-size: 1.8em;
+    font-family: 'Poppins', sans-serif;
 }
 
 #home h2::after {
@@ -117,6 +120,7 @@ main:hover {
 #home p {
     margin-bottom: 10px;
     line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
 }
 
 footer {
@@ -126,6 +130,7 @@ footer {
     padding: 20px;
     font-size: 0.9em;
     border-top: 2px solid #3CB371;
+    font-family: 'Poppins', sans-serif;
 }
 
 #randomTextContainer {
@@ -136,6 +141,7 @@ footer {
     border: 1px solid #ddd;
     border-radius: 8px;
     background: #f9f9f9;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .control-button {
@@ -149,6 +155,7 @@ footer {
     cursor: pointer;
     transition: all 0.3s ease, transform 0.2s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-family: 'Poppins', sans-serif;
 }
 
 .control-button:hover {
