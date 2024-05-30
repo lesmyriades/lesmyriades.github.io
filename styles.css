@@ -23,9 +23,10 @@ header {
 
 nav {
     margin: 20px;
-    background: #3CB371;
+    background: linear-gradient(90deg, #3CB371 0%, #2E8B57 100%);
     padding: 10px;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -55,7 +56,7 @@ nav ul li a::after {
     width: 100%;
     transform: scaleX(0);
     height: 2px;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     background-color: #ffffff;
     transform-origin: bottom right;
@@ -102,8 +103,8 @@ main:hover {
     height: 100vh;
     overflow: hidden;
     position: relative;
-    margin: 0;  /* Retirer les marges */
-    padding: 0;  /* Retirer les marges */
+    margin: 0;
+    padding: 0;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -116,9 +117,9 @@ main:hover {
     height: 100%;
     object-fit: cover;
     cursor: grab;
-    margin: 0;  /* Retirer les marges */
-    padding: 0;  /* Retirer les marges */
-    display: block;  /* Assurer qu'il n'y a pas d'espaces blancs en dessous */
+    margin: 0;
+    padding: 0;
+    display: block;
     border-radius: 8px;
 }
 
