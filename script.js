@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // Script pour zoomer et déplacer l'image en plein écran
-    const imageElement = document.querySelector('.full-screen-image img');
+    const imageElement = document.querySelector('#full-screen-image');
     const panzoom = Panzoom(imageElement, {
         maxScale: 10,
         minScale: 1,
