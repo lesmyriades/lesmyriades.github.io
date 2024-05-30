@@ -259,3 +259,79 @@ footer {
 .stylish-link:visited {
     color: #3CB371;
 }
+
+
+#tree-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+#tree {
+    list-style-type: none;
+    position: relative;
+    padding: 20px 0;
+    margin: 0;
+}
+
+#tree::before {
+    content: '';
+    display: block;
+    width: 0;
+    position: absolute;
+    top: 0;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -1px;
+    border-left: 2px solid #3CB371;
+}
+
+.tree-node {
+    margin: 0;
+    padding: 10px 5px;
+    text-align: center;
+    position: relative;
+}
+
+.tree-node::before,
+.tree-node::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    border-top: 2px solid #3CB371;
+    width: 50%;
+    height: 20px;
+}
+
+.tree-node::before {
+    left: 50%;
+    border-left: 2px solid #3CB371;
+}
+
+.tree-node::after {
+    right: 50%;
+    border-right: 2px solid #3CB371;
+}
+
+.tree-node:only-child::after,
+.tree-node:only-child::before {
+    display: none;
+}
+
+.tree-node:only-child {
+    padding-top: 0;
+}
+
+.tree-node .label {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #3CB371;
+    color: #fff;
+    border-radius: 5px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.tree-node .label:hover {
+    background: #2E8B57;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
