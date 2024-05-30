@@ -52,3 +52,9 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+#randomTextContainer {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #000000;
+}
