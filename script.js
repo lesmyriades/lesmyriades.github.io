@@ -13,3 +13,17 @@ function addRandomText() {
 }
 
 setInterval(addRandomText, 1000); // Change 1000 to the desired interval in milliseconds
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const audio = document.getElementById('background-audio');
+
+    // Ajouter des contrôles pour la lecture et la pause
+    document.getElementById('pause-button').addEventListener('click', () => {
+        audio.pause();
+    });
+
+    document.getElementById('play-button').addEventListener('click', () => {
+        audio.play();
+    });
+});
+
