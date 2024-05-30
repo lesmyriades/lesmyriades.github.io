@@ -78,7 +78,7 @@ nav ul li a:active {
 }
 
 nav ul li a:visited {
-    color: #f1f1f1;
+    color: #ffffff; /* Ensure visited links remain white */
 }
 
 main {
