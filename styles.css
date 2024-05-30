@@ -47,7 +47,7 @@ nav ul li a:hover {
 main {
     flex: 1;
     text-align: left;
-    margin: 1em;  /* Ajout de la marge de 1em */
+    margin: 10px;  /* Ajout de la marge de ? */
 }
 
 .full-screen-image {
