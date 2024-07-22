@@ -387,6 +387,11 @@ body {
 
 .node text {
     font-size: 12px;
+    display: none; /* Masquer le texte par défaut */
+}
+
+.node:hover text {
+    display: block; /* Afficher le texte au survol */
 }
 
 .link {
