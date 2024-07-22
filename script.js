@@ -59,9 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
     generateButton.addEventListener('click', displayNewStory);
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    var toggler = document.getElementsByClassName("caret");
-    for (var i = 0; i < toggler.length; i++) {
+// Gestion des éléments interactifs pour l'arborescence
+document.addEventListener('DOMContentLoaded', () => {
+    const toggler = document.getElementsByClassName("caret");
+    for (let i = 0; i < toggler.length; i++) {
         toggler[i].addEventListener("click", function () {
             this.parentElement.querySelector(".nested").classList.toggle("active");
             this.classList.toggle("caret-down");
@@ -69,32 +70,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// end
-
-
-document.addEventListener('DOMContentLoaded', function() {
+// Initialisation de la visualisation D3
+document.addEventListener('DOMContentLoaded', () => {
     const width = 960;
     const height = 600;
 
     const data = {
         name: "Racine",
-        
         children: [
-            { name: "Prêtres" 
-            
-              children: [
+            {
+                name: "Prêtres",
+                children: [
                     { name: "John Earle" },
                     { name: "Philippe Mélanchthon" }
                 ]
             },
-            { 
+            {
                 name: "Plante",
                 children: [
                     { name: "Plante 1" },
                     { name: "Plante 2" }
                 ]
             },
-            
             {
                 name: "Titre d'ouvrage",
                 children: [
@@ -156,9 +153,9 @@ document.addEventListener('DOMContentLoaded', function() {
         .style("opacity", 1);
 
     node.append("circle")
-        .attr("r", d => d.depth === 0 ? 25 : d.depth === 1 ? 15 : 10) // Taille des sphères
+        .attr("r", d => d.depth === 0 ? 25 : d.depth === 1 ? 15 : 10)
         .style("fill", (d, i) => color(i))
-        .attr("class", d => d.depth === 0 ? "central-node" : "") // Ajout de la classe pour l'animation
+        .attr("class", d => d.depth === 0 ? "central-node" : "")
         .on("mouseover", function(event, d) {
             d3.select(this).select('text').style('display', 'block');
         })
