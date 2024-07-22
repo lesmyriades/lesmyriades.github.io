@@ -101,6 +101,8 @@ document.addEventListener('DOMContentLoaded', function() {
         ]
     };
 
+    const color = d3.scaleOrdinal(d3.schemeCategory10);
+
     const svg = d3.select("#chart")
                   .append("svg")
                   .attr("width", width)
@@ -143,8 +145,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     node.append("circle")
         .attr("r", 5)
+        .style("fill", (d, i) => color(i))
         .on("click", function(event, d) {
             alert(d.data.name);
+        })
+        .on("mouseover", function(event, d) {
+            d3.select(this).select('text').style('display', 'block');
+        })
+        .on("mouseout", function(event, d) {
+            d3.select(this).select('text').style('display', 'none');
         });
 
     node.append("text")
