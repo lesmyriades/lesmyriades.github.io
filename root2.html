@@ -26,51 +26,59 @@
     <main>
 
          <div class="tree">
-        <ul>
-            <li>
-                <span class="caret">Naturalistes-botanistes</span>
-                <ul class="nested">
-                 <span class="caret">Médecins</span>
-                        <ul class="nested">
-                            <li>Leonhart Fuchs</li>
-                            <li>Jacques Daléchamps</li>
+            <ul>
+                <li>
+                    <span class="caret">Naturalistes-botanistes</span>
+                    <ul class="nested">
+                        <li>
+                            <span class="caret">Médecins</span>
+                            <ul class="nested">
+                                <li>Leonhart Fuchs</li>
+                                <li>Jacques Daléchamps</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="caret">Apothicaires</span>
+                            <ul class="nested">
+                                <li>Leonhart Fuchs</li>
+                                <li>Jacques Daléchamps</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="caret">Barbiers-chirurgiens</span>
+                            <ul class="nested">
+                                <li>Leonhart Fuchs</li>
+                                <li>Jacques Daléchamps</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="caret">Parent 2</span>
+                            <ul class="nested">
+                                <li>Enfant 3</li>
+                                <li>Enfant 4</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="caret">Parent 3</span>
+                    <ul class="nested">
+                        <li>Enfant 5</li>
+                        <li>Enfant 6</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
 
-                        </ul>
+        <!-- Placez le code pour l'arborescence D3 ici -->
+        <div id="chart"></div>
 
-                     <span class="caret">Apothicaires</span>
-                        <ul class="nested">
-                            <li>Leonhart Fuchs</li>
-                            <li>Jacques Daléchamps</li> </ul>
-                      
-                         <span class="caret">Barbiers-chirurgiens</span>
-                        <ul class="nested">
-                            <li>Leonhart Fuchs</li>
-                            <li>Jacques Daléchamps</li></ul>
-                    
-                    <li>
-                        <span class="caret">Parent 2</span>
-                        <ul class="nested">
-                            <li>Enfant 3</li>
-                            <li>Enfant 4</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <span class="caret">Parent 3</span>
-                <ul class="nested">
-                    <li>Enfant 5</li>
-                    <li>Enfant 6</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    <script src="script.js"></script>
-
-         <div id="chart"></div>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="script.js"></script>
-        
+        <!-- Assurez-vous que le script D3 est bien chargé -->
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        <!-- Votre script JavaScript pour D3 -->
+        <script src="script.js"></script>
+        <!-- Votre script JavaScript pour l'arborescence HTML -->
+        <script src="tree-script.js"></script>
     </main>
 
     
