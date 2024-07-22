@@ -404,7 +404,7 @@ body {
 
 .central-node {
     animation: pulse 2s infinite;
-    fill: blue;
+    fill: orange;
 }
 
 @keyframes pulse {
