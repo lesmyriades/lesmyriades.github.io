@@ -120,13 +120,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     .attr("d", d3.linkRadial()
                                  .angle(d => d.x)
                                  .radius(d => d.y))
-                    .style("opacity", 0)
-                    .transition()
-                    .duration(1000)
-                    .style("opacity", 1)
-                    .attr("d", d3.linkRadial()
-                                 .angle(d => d.x)
-                                 .radius(d => d.y));
+                    .style("opacity", 0);
+
+    link.transition()
+        .duration(1000)
+        .style("opacity", 1);
 
     const node = svg.append("g")
                     .selectAll(".node")
@@ -137,14 +135,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         rotate(${d.x * 180 / Math.PI - 90})
                         translate(${d.y},0)
                     `)
-                    .style("opacity", 0)
-                    .transition()
-                    .duration(1000)
-                    .style("opacity", 1)
-                    .attr("transform", d => `
-                        rotate(${d.x * 180 / Math.PI - 90})
-                        translate(${d.y},0)
-                    `);
+                    .style("opacity", 0);
+
+    node.transition()
+        .duration(1000)
+        .style("opacity", 1);
 
     node.append("circle")
         .attr("r", 5)
@@ -159,4 +154,5 @@ document.addEventListener('DOMContentLoaded', function() {
         .attr("transform", d => d.x >= Math.PI ? "rotate(180)" : null)
         .text(d => d.data.name);
 });
+
 
