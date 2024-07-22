@@ -140,18 +140,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         rotate(${d.x * 180 / Math.PI - 90})
                         translate(${d.y},0)
                     `)
-                    .style("opacity", 0);
+                    .style("opacity", 0)
+                    .on("click", click);
 
     node.transition()
         .duration(1000)
         .style("opacity", 1);
 
     node.append("circle")
-        .attr("r", 5)
+        .attr("r", d => d.depth === 0 ? 25 : d.depth === 1 ? 15 : 10) // Taille des sphères
         .style("fill", (d, i) => color(i))
-        .on("click", function(event, d) {
-            alert(d.data.name);
-        })
+        .attr("class", d => d.depth === 0 ? "central-node" : "") // Ajout de la classe pour l'animation
         .on("mouseover", function(event, d) {
             d3.select(this).select('text').style('display', 'block');
         })
@@ -165,5 +164,50 @@ document.addEventListener('DOMContentLoaded', function() {
         .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
         .attr("transform", d => d.x >= Math.PI ? "rotate(180)" : null)
         .text(d => d.data.name);
-});
 
+    function click(event, d) {
+        if (d.children) {
+            d._children = d.children;
+            d.children = null;
+        } else {
+            d.children = d._children;
+            d._children = null;
+        }
+        update(d);
+    }
+
+    function update(source) {
+        tree(root);
+
+        const nodes = root.descendants();
+        const links = root.links();
+
+        svg.selectAll(".link")
+            .data(links, d => d.target.id)
+            .transition()
+            .duration(1000)
+            .attr("d", d3.linkRadial()
+                         .angle(d => d.x)
+                         .radius(d => d.y))
+            .style("opacity", 1);
+
+        svg.selectAll(".node")
+            .data(nodes, d => d.id || (d.id = ++i))
+            .attr("transform", d => `
+                rotate(${d.x * 180 / Math.PI - 90})
+                translate(${d.y},0)
+            `);
+    }
+
+    let i = 0;
+    root.children.forEach(collapse);
+    update(root);
+
+    function collapse(d) {
+        if (d.children) {
+            d._children = d.children;
+            d._children.forEach(collapse);
+            d.children = null;
+        }
+    }
+});
