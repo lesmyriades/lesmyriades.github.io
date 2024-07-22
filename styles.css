@@ -399,3 +399,27 @@ body {
     stroke: #ccc;
     stroke-width: 2px;
 }
+
+#chart {
+    position: relative;
+}
+
+.central-node {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        r: 20px;
+        stroke-opacity: 0.5;
+    }
+    50% {
+        r: 25px;
+        stroke-opacity: 1;
+    }
+    100% {
+        r: 20px;
+        stroke-opacity: 0.5;
+    }
+}
+
