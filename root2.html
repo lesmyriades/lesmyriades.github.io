@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
+    <title>Arborescence dynamique de ma thèse</title>
     <link rel="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Calculation</h1>
+        <h1>Arbre</h1>
     </header>
     <nav>
         <ul>
@@ -21,10 +21,37 @@
             <li><a href="about.html">About</a></li>
         </ul>
     </nav>
-     <main>
-        <section id="tree-container">
-            <div id="tree"></div>
-        </section>
+     
+
+    <main>
+
+         <div class="tree">
+        <ul>
+            <li>
+                <span class="caret">Parent 1</span>
+                <ul class="nested">
+                    <li>Enfant 1</li>
+                    <li>Enfant 2</li>
+                    <li>
+                        <span class="caret">Parent 2</span>
+                        <ul class="nested">
+                            <li>Enfant 3</li>
+                            <li>Enfant 4</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span class="caret">Parent 3</span>
+                <ul class="nested">
+                    <li>Enfant 5</li>
+                    <li>Enfant 6</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+        
     </main>
     <footer>
          
