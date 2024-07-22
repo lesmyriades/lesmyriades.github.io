@@ -409,15 +409,15 @@ body {
 
 @keyframes pulse {
     0% {
-        r: 20px;
+        r: 25px; /* Augmentez le rayon initial */
         stroke-opacity: 0.5;
     }
     50% {
-        r: 25px;
+        r: 30px; /* Augmentez le rayon pendant l'animation */
         stroke-opacity: 1;
     }
     100% {
-        r: 20px;
+        r: 25px; /* Réduit le rayon à la fin de l'animation */
         stroke-opacity: 0.5;
     }
 }
