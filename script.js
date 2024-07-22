@@ -77,16 +77,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const height = 600;
 
     const data = {
-        name: "Centre",
+        name: "Racine",
+        
         children: [
-            { name: "Personne 1" },
-            {
+            { name: "Prêtres" 
+            
+              children: [
+                    { name: "John Earle" },
+                    { name: "Plante 2" }
+                ]
+            },
+            { 
                 name: "Plante",
                 children: [
                     { name: "Plante 1" },
                     { name: "Plante 2" }
                 ]
             },
+            
             {
                 name: "Titre d'ouvrage",
                 children: [
