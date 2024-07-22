@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
               children: [
                     { name: "John Earle" },
-                    { name: "Plante 2" }
+                    { name: "Philippe Mélanchthon" }
                 ]
             },
             { 
