@@ -101,8 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
         ]
     };
 
-    const color = d3.scaleOrdinal(d3.schemeCategory10);
-
     const svg = d3.select("#chart")
                   .append("svg")
                   .attr("width", width)
@@ -112,56 +110,82 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const root = d3.hierarchy(data);
     const tree = d3.tree().size([2 * Math.PI, 300]);
-    tree(root);
 
-    const link = svg.append("g")
-                    .selectAll(".link")
-                    .data(root.links())
-                    .enter().append("path")
-                    .attr("class", "link")
-                    .attr("d", d3.linkRadial()
-                                 .angle(d => d.x)
-                                 .radius(d => d.y))
-                    .style("opacity", 0);
+    const color = d3.scaleOrdinal(d3.schemeCategory10);
 
-    link.transition()
-        .duration(1000)
-        .style("opacity", 1);
+    function update(source) {
+        tree(root);
 
-    const node = svg.append("g")
-                    .selectAll(".node")
-                    .data(root.descendants())
-                    .enter().append("g")
-                    .attr("class", "node")
-                    .attr("transform", d => `
-                        rotate(${d.x * 180 / Math.PI - 90})
-                        translate(${d.y},0)
-                    `)
-                    .style("opacity", 0);
+        const nodes = root.descendants();
+        const links = root.links();
 
-    node.transition()
-        .duration(1000)
-        .style("opacity", 1);
+        const link = svg.selectAll(".link")
+                        .data(links, d => d.target.id);
 
-    node.append("circle")
-        .attr("r", 5)
-        .style("fill", (d, i) => color(i))
-        .on("click", function(event, d) {
-            alert(d.data.name);
-        })
-        .on("mouseover", function(event, d) {
-            d3.select(this).select('text').style('display', 'block');
-        })
-        .on("mouseout", function(event, d) {
-            d3.select(this).select('text').style('display', 'none');
-        });
+        link.enter().append("path")
+            .attr("class", "link")
+            .attr("d", d3.linkRadial()
+                        .angle(d => d.x)
+                        .radius(d => d.y))
+            .style("opacity", 0)
+            .transition()
+            .duration(1000)
+            .style("opacity", 1);
 
-    node.append("text")
-        .attr("dy", "0.31em")
-        .attr("x", d => d.x < Math.PI === !d.children ? 6 : -6)
-        .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
-        .attr("transform", d => d.x >= Math.PI ? "rotate(180)" : null)
-        .text(d => d.data.name);
+        link.exit().remove();
+
+        const node = svg.selectAll(".node")
+                        .data(nodes, d => d.id || (d.id = ++i));
+
+        const nodeEnter = node.enter().append("g")
+                               .attr("class", "node")
+                               .attr("transform", d => `
+                                   rotate(${d.x * 180 / Math.PI - 90})
+                                   translate(${d.y},0)
+                               `)
+                               .style("opacity", 0)
+                               .on("click", click);
+
+        nodeEnter.transition()
+                 .duration(1000)
+                 .style("opacity", 1);
+
+        nodeEnter.append("circle")
+                 .attr("r", d => d.depth === 0 ? 20 : d.depth === 1 ? 15 : 10)
+                 .style("fill", (d, i) => color(i))
+                 .attr("class", d => d.depth === 0 ? "central-node" : "");
+
+        nodeEnter.append("text")
+                 .attr("dy", "0.31em")
+                 .attr("x", d => d.x < Math.PI === !d.children ? 6 : -6)
+                 .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
+                 .attr("transform", d => d.x >= Math.PI ? "rotate(180)" : null)
+                 .text(d => d.data.name);
+
+        node.exit().remove();
+    }
+
+    function click(event, d) {
+        if (d.children) {
+            d._children = d.children;
+            d.children = null;
+        } else {
+            d.children = d._children;
+            d._children = null;
+        }
+        update(d);
+    }
+
+    root.children.forEach(collapse);
+    update(root);
+
+    function collapse(d) {
+        if (d.children) {
+            d._children = d.children;
+            d._children.forEach(collapse);
+            d.children = null;
+        }
+    }
 });
 
 
