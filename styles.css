@@ -1,3 +1,4 @@
+/* Styles globaux */
 html, body {
     height: 100%;
     margin: 0;
@@ -43,7 +44,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #ffffff; /* Couleur des liens en blanc */
+    color: #ffffff;
     font-weight: bold;
     transition: color 0.3s, transform 0.3s;
     position: relative;
@@ -69,7 +70,7 @@ nav ul li a:hover::after {
 }
 
 nav ul li a:hover {
-    color: #000000; /* Change to black on hover */
+    color: #000000;
     transform: translateY(-2px);
 }
 
@@ -79,7 +80,7 @@ nav ul li a:active {
 }
 
 nav ul li a:visited {
-    color: #ffffff; /* Ensure visited links remain white */
+    color: #ffffff;
 }
 
 main {
@@ -134,7 +135,6 @@ main:hover {
     border-radius: 8px;
 }
 
-/* Alignement du texte à gauche pour la section avec l'ID "home" */
 #home {
     text-align: left;
     padding: 20px;
@@ -159,7 +159,7 @@ main:hover {
 }
 
 #home h3 {
-    font-size: 1.5em; /* Adjust the font size for h3 */
+    font-size: 1.5em;
 }
 
 #home p {
@@ -260,14 +260,14 @@ footer {
     color: #3CB371;
 }
 
-
+/* Styles pour l'arborescence */
 #tree-container {
     width: 100%;
     max-width: 800px;
 }
 
 #tree {
-    list-style-type: none; /* Supprime les puces */
+    list-style-type: none;
     position: relative;
     padding: 20px 0;
     margin: 0;
@@ -322,7 +322,7 @@ footer {
 }
 
 .tree-node ul {
-    list-style-type: none; /* Supprime les puces pour les sous-listes */
+    list-style-type: none;
     padding: 0;
     margin: 0;
 }
@@ -343,57 +343,21 @@ footer {
 }
 
 .tree-node ul {
-    padding-left: 0; /* Supprime le padding pour les sous-listes */
+    padding-left: 0;
 }
 
-
-/*script pour arborescence */
-
-.tree ul {
-    list-style-type: none;
-}
-
-.tree .caret {
-    cursor: pointer;
-    user-select: none; /* Ne permet pas de sélectionner le texte */
-}
-
-.tree .caret::before {
-    content: "\25B6";
-    color: black;
-    display: inline-block;
-    margin-right: 6px;
-}
-
-.tree .caret-down::before {
-    transform: rotate(90deg);
-}
-
-.tree .nested {
-    display: none;
-}
-
-.tree .active {
-    display: block;
-}
-
-/* autre */
-
-body {
-    font-family: Arial, sans-serif;
-}
-
+/* Styles spécifiques à l'arborescence dynamique avec D3 */
 .node {
     cursor: pointer;
 }
 
 .node text {
     font-size: 12px;
-    display: none; /* Masquer le texte par défaut */
+    display: none;
 }
 
 .node:hover text {
-    display: block; /* Afficher le texte au survol */
+    display: block;
 }
 
 .link {
@@ -409,15 +373,15 @@ body {
 
 @keyframes pulse {
     0% {
-        r: 25px; /* Augmentez le rayon initial */
+        r: 25px;
         stroke-opacity: 0.5;
     }
     50% {
-        r: 30px; /* Augmentez le rayon pendant l'animation */
+        r: 30px;
         stroke-opacity: 1;
     }
     100% {
-        r: 25px; /* Réduit le rayon à la fin de l'animation */
+        r: 25px;
         stroke-opacity: 0.5;
     }
 }
