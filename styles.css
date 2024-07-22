@@ -345,3 +345,35 @@ footer {
 .tree-node ul {
     padding-left: 0; /* Supprime le padding pour les sous-listes */
 }
+
+
+/*script pour arborescence */
+
+.tree ul {
+    list-style-type: none;
+}
+
+.tree .caret {
+    cursor: pointer;
+    user-select: none; /* Ne permet pas de sélectionner le texte */
+}
+
+.tree .caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.tree .caret-down::before {
+    transform: rotate(90deg);
+}
+
+.tree .nested {
+    display: none;
+}
+
+.tree .active {
+    display: block;
+}
+
