@@ -377,6 +377,8 @@ footer {
     display: block;
 }
 
+/* autre */
+
 body {
     font-family: Arial, sans-serif;
 }
@@ -400,12 +402,9 @@ body {
     stroke-width: 2px;
 }
 
-#chart {
-    position: relative;
-}
-
 .central-node {
     animation: pulse 2s infinite;
+    fill: orange;
 }
 
 @keyframes pulse {
