@@ -69,3 +69,79 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const width = 960;
+    const height = 600;
+
+    const data = {
+        name: "Centre",
+        children: [
+            { name: "Personne 1" },
+            {
+                name: "Plante",
+                children: [
+                    { name: "Plante 1" },
+                    { name: "Plante 2" }
+                ]
+            },
+            {
+                name: "Titre d'ouvrage",
+                children: [
+                    { name: "Titre 1" },
+                    { name: "Titre 2" }
+                ]
+            },
+            {
+                name: "Ville",
+                children: [
+                    { name: "Ville 1" },
+                    { name: "Ville 2" }
+                ]
+            }
+        ]
+    };
+
+    const svg = d3.select("#chart")
+                  .append("svg")
+                  .attr("width", width)
+                  .attr("height", height)
+                  .append("g")
+                  .attr("transform", `translate(${width / 2},${height / 2})`);
+
+    const root = d3.hierarchy(data);
+    const tree = d3.tree().size([2 * Math.PI, 300]);
+    tree(root);
+
+    const link = svg.append("g")
+                    .selectAll(".link")
+                    .data(root.links())
+                    .enter().append("path")
+                    .attr("class", "link")
+                    .attr("d", d3.linkRadial()
+                                 .angle(d => d.x)
+                                 .radius(d => d.y));
+
+    const node = svg.append("g")
+                    .selectAll(".node")
+                    .data(root.descendants())
+                    .enter().append("g")
+                    .attr("class", "node")
+                    .attr("transform", d => `
+                        rotate(${d.x * 180 / Math.PI - 90})
+                        translate(${d.y},0)
+                    `);
+
+    node.append("circle")
+        .attr("r", 5)
+        .on("click", function(event, d) {
+            alert(d.data.name);
+        });
+
+    node.append("text")
+        .attr("dy", "0.31em")
+        .attr("x", d => d.x < Math.PI === !d.children ? 6 : -6)
+        .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
+        .attr("transform", d => d.x >= Math.PI ? "rotate(180)" : null)
+        .text(d => d.data.name);
+});
+
