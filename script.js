@@ -119,6 +119,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     .attr("class", "link")
                     .attr("d", d3.linkRadial()
                                  .angle(d => d.x)
+                                 .radius(d => d.y))
+                    .style("opacity", 0)
+                    .transition()
+                    .duration(1000)
+                    .style("opacity", 1)
+                    .attr("d", d3.linkRadial()
+                                 .angle(d => d.x)
                                  .radius(d => d.y));
 
     const node = svg.append("g")
@@ -126,6 +133,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     .data(root.descendants())
                     .enter().append("g")
                     .attr("class", "node")
+                    .attr("transform", d => `
+                        rotate(${d.x * 180 / Math.PI - 90})
+                        translate(${d.y},0)
+                    `)
+                    .style("opacity", 0)
+                    .transition()
+                    .duration(1000)
+                    .style("opacity", 1)
                     .attr("transform", d => `
                         rotate(${d.x * 180 / Math.PI - 90})
                         translate(${d.y},0)
